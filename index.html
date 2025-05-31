@@ -13,9 +13,9 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            background: #0a0a0a;
             min-height: 100vh;
-            color: #ffffff;
+            color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -38,37 +38,14 @@
             }
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 10px rgba(79, 172, 254, 0.3); }
-            50% { box-shadow: 0 0 20px rgba(79, 172, 254, 0.6), 0 0 30px rgba(79, 172, 254, 0.3); }
-            100% { box-shadow: 0 0 10px rgba(79, 172, 254, 0.3); }
-        }
-
-        @keyframes slideInLeft {
+        @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateX(-50px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
+                transform: translateY(0);
             }
         }
 
@@ -81,41 +58,27 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 10px;
-            color: #4facfe;
+            color: #ffffff;
             font-weight: 700;
-            text-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
-            /*animation: pulse 3s ease-in-out infinite;*/
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .subtitle {
             font-size: 1.2rem;
-            color: #8892b0;
+            color: #888888;
             margin-bottom: 30px;
             animation: slideInUp 1s ease-out 0.3s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .nav-tabs {
             display: flex;
             justify-content: center;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            border-radius: 15px;
+            background: #1a1a1a;
+            border-radius: 12px;
             padding: 8px;
             margin-bottom: 40px;
             flex-wrap: wrap;
-            box-shadow: 0 8px 32px rgba(79, 172, 254, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(79, 172, 254, 0.1);
+            border: 1px solid #333333;
         }
 
         .nav-tab {
@@ -123,9 +86,9 @@
             margin: 4px;
             background: transparent;
             border: none;
-            color: #8892b0;
+            color: #888888;
             cursor: pointer;
-            border-radius: 10px;
+            border-radius: 8px;
             transition: all 0.2s ease;
             font-size: 0.95rem;
             font-weight: 500;
@@ -134,14 +97,13 @@
         }
 
         .nav-tab:hover {
-            background: rgba(79, 172, 254, 0.1);
-            color: #4facfe;
+            background: #2a2a2a;
+            color: #ffffff;
         }
 
         .nav-tab.active {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: #0a0a0a;
-            animation: glow 2s ease-in-out infinite;
+            background: #333333;
+            color: #ffffff;
         }
 
         .tab-content {
@@ -159,12 +121,11 @@
         }
 
         .content-card {
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.6));
-            border-radius: 20px;
+            background: #151515;
+            border-radius: 16px;
             padding: 30px;
             margin-bottom: 30px;
-            border: 1px solid rgba(79, 172, 254, 0.2);
-            backdrop-filter: blur(10px);
+            border: 1px solid #2a2a2a;
             transition: all 0.2s ease;
             position: relative;
             overflow: hidden;
@@ -172,24 +133,30 @@
 
         .content-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.15);
-            border-color: rgba(79, 172, 254, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-color: #404040;
+        }
+
+        .content-card h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
         }
 
         .about-text {
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(30, 60, 114, 0.6));
+            background: #0f0f0f;
             padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid #4facfe;
+            border-radius: 12px;
+            border-left: 4px solid #666666;
             font-size: 1rem;
             transition: all 0.2s ease;
             position: relative;
+            color: #cccccc;
         }
 
-        /*.about-text:hover {
-            transform: translateX(2px);
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.1);
-        }*/
+        .about-text strong {
+            color: #ffffff;
+        }
 
         .skills-grid {
             display: grid;
@@ -199,22 +166,23 @@
         }
 
         .skill-item {
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(30, 60, 114, 0.6));
+            background: #0f0f0f;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 12px;
             text-align: center;
             transition: all 0.2s ease;
-            border: 1px solid rgba(79, 172, 254, 0.2);
+            border: 1px solid #2a2a2a;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            color: #cccccc;
         }
 
         .skill-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.2);
-            border-color: #4facfe;
-            color: #4facfe;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border-color: #555555;
+            color: #ffffff;
         }
 
         .links-grid {
@@ -225,10 +193,10 @@
         }
 
         .link-item {
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(30, 60, 114, 0.6));
+            background: #0f0f0f;
             padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid #4facfe;
+            border-radius: 12px;
+            border-left: 4px solid #666666;
             transition: all 0.2s ease;
             position: relative;
             overflow: hidden;
@@ -236,134 +204,28 @@
 
         .link-item:hover {
             transform: translateX(3px);
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.15);
-            border-left-color: #00f2fe;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-left-color: #888888;
         }
 
         .link-title {
             font-weight: 600;
-            color: #4facfe;
+            color: #ffffff;
             margin-bottom: 8px;
             font-size: 1.1rem;
             transition: color 0.2s ease;
         }
 
-        .link-item:hover .link-title {
-            color: #00f2fe;
-        }
-
         .link-url {
-            color: #8892b0;
+            color: #888888;
             text-decoration: none;
             word-break: break-all;
             transition: all 0.2s ease;
         }
 
         .link-url:hover {
-            color: #4facfe;
+            color: #cccccc;
             text-decoration: underline;
-        }
-
-        .certs-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .cert-item {
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(30, 60, 114, 0.6));
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid #4facfe;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cert-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(79, 172, 254, 0.2);
-        }
-
-        .cert-item::after {
-            content: "🖼️";
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.1rem;
-            opacity: 0.6;
-            transition: all 0.2s ease;
-        }
-
-        .cert-item:hover::after {
-            opacity: 1;
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .game-item {
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(30, 60, 114, 0.6));
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(79, 172, 254, 0.2);
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
-            border-color: #4facfe;
-        }
-
-        .game-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #4facfe;
-            margin-bottom: 15px;
-            transition: color 0.2s ease;
-        }
-
-        .game-item:hover .game-title {
-            color: #00f2fe;
-        }
-
-        .game-description {
-            color: #8892b0;
-            margin-bottom: 20px;
-            transition: color 0.2s ease;
-        }
-
-        .game-item:hover .game-description {
-            color: #ccd6f6;
-        }
-
-        .game-download {
-            display: inline-block;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: #0a0a0a;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 10px;
-            transition: all 0.2s ease;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-download:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
-            text-decoration: none;
-            color: #0a0a0a;
         }
 
         .kernel-section, .port-section {
@@ -371,25 +233,24 @@
         }
 
         .kernel-category, .device-category {
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(30, 60, 114, 0.6));
-            border-radius: 20px;
+            background: #151515;
+            border-radius: 16px;
             padding: 30px;
             margin-bottom: 25px;
-            border: 1px solid rgba(79, 172, 254, 0.2);
+            border: 1px solid #2a2a2a;
             transition: all 0.2s ease;
         }
 
         .kernel-category:hover, .device-category:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .kernel-name, .device-name {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 20px;
-            color: #4facfe;
-            text-shadow: 0 0 10px rgba(79, 172, 254, 0.3);
+            color: #ffffff;
         }
 
         .device-list, .rom-list {
@@ -399,10 +260,10 @@
         }
 
         .device-item, .rom-item {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.8), rgba(22, 33, 62, 0.6));
+            background: #0a0a0a;
             padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(79, 172, 254, 0.2);
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
             transition: all 0.2s ease;
             display: flex;
             flex-direction: column;
@@ -414,23 +275,23 @@
 
         .device-item:hover, .rom-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.2);
-            border-color: #4facfe;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border-color: #404040;
         }
 
         .device-name-text, .rom-name-text {
             font-weight: 500;
-            color: #ccd6f6;
+            color: #cccccc;
             transition: color 0.2s ease;
         }
 
         .device-item:hover .device-name-text, .rom-item:hover .rom-name-text {
-            color: #4facfe;
+            color: #ffffff;
         }
 
         .download-link {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: #0a0a0a;
+            background: #333333;
+            color: #ffffff;
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 8px;
@@ -442,18 +303,19 @@
         }
 
         .download-link:hover {
+            background: #444444;
             transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             text-decoration: none;
-            color: #0a0a0a;
+            color: #ffffff;
         }
 
         .show-more-btn {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            background: #333333;
             border: none;
-            color: #0a0a0a;
+            color: #ffffff;
             padding: 12px 25px;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 0.9rem;
             font-weight: 600;
@@ -462,8 +324,9 @@
         }
 
         .show-more-btn:hover {
+            background: #444444;
             transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         .hidden-devices {
@@ -492,14 +355,13 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9), rgba(42, 82, 152, 0.8));
+            background: #1a1a1a;
             padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 16px;
+            border: 1px solid #333333;
             max-width: 80%;
             max-height: 80%;
             overflow: auto;
-            backdrop-filter: blur(20px);
             animation: modalSlideIn 0.3s ease-out;
         }
 
@@ -518,15 +380,15 @@
             width: 100%;
             max-width: 600px;
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .close {
             position: absolute;
             top: 15px;
             right: 25px;
-            color: #8892b0;
+            color: #888888;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
@@ -534,15 +396,15 @@
         }
 
         .close:hover {
-            color: #4facfe;
+            color: #ffffff;
         }
 
         .add-btn {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            background: #333333;
             border: none;
-            color: #0a0a0a;
+            color: #ffffff;
             padding: 12px 25px;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;
             font-weight: 600;
@@ -551,30 +413,31 @@
         }
 
         .add-btn:hover {
+            background: #444444;
             transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
         }
 
         input, textarea {
             width: 100%;
             padding: 15px;
             margin: 10px 0;
-            border: 1px solid rgba(79, 172, 254, 0.3);
-            border-radius: 10px;
-            background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(30, 60, 114, 0.6));
-            color: #ccd6f6;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            background: #1a1a1a;
+            color: #cccccc;
             font-size: 1rem;
             transition: all 0.2s ease;
         }
 
         input::placeholder, textarea::placeholder {
-            color: #8892b0;
+            color: #666666;
         }
 
         input:focus, textarea:focus {
             outline: none;
-            border-color: #4facfe;
-            box-shadow: 0 0 15px rgba(79, 172, 254, 0.2);
+            border-color: #555555;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
             transform: translateY(-1px);
         }
 
@@ -584,16 +447,16 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(22, 33, 62, 0.5);
+            background: #1a1a1a;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            background: #444444;
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #00f2fe, #4facfe);
+            background: #555555;
         }
 
         @media (max-width: 768px) {
@@ -628,26 +491,26 @@
             }
         }
 
-        /* Particle background effect */
+        /* Subtle particle background effect */
         .particle {
             position: fixed;
             pointer-events: none;
-            width: 2px;
-            height: 2px;
-            background: #4facfe;
+            width: 1px;
+            height: 1px;
+            background: #333333;
             border-radius: 50%;
-            opacity: 0.5;
-            animation: float 6s ease-in-out infinite;
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% {
                 transform: translateY(0px);
-                opacity: 0.5;
+                opacity: 0.3;
             }
             50% {
-                transform: translateY(-20px);
-                opacity: 1;
+                transform: translateY(-15px);
+                opacity: 0.6;
             }
         }
     </style>
@@ -662,16 +525,12 @@
         <div class="nav-tabs">
             <button class="nav-tab active" onclick="switchTab('about')">About Me</button>
             <button class="nav-tab" onclick="switchTab('kernels')">Kernels</button>
-            <!--<button class="nav-tab" onclick="switchTab('ports')">ROM Ports</button>-->
-            <!--<button class="nav-tab" onclick="switchTab('games')">Games</button>-->
         </div>
 
         <!-- About Me Tab -->
         <div id="about" class="tab-content active">
             <div class="content-card">
-                <h2>
-                    About me
-                </h2>
+                <h2>About me</h2>
                 <div class="about-text">
 Hi! I'm <strong>Husam Alhayek</strong>, a 15-year-old developer and CTF Player based in Jordan.<br><br>
 
@@ -685,7 +544,6 @@ Languages I speak: <strong>Arabic</strong>, <strong>English</strong> And learnin
 Languages I code: Mainly <strong>C/C++</strong>, <strong>C#</strong>, and <strong>Bash Scripting</strong><br><br>
 
 I'm always learning, building, and exploring new things.
-
                 </div>
             </div>
 
@@ -693,10 +551,10 @@ I'm always learning, building, and exploring new things.
                 <h2>Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-item">Android OS and Kernel Development</div>
-                    <dev class="skill-item">Git & Github</dev>
-                    <dev class="skill-item">Unity Development</dev>
-                    <dev class="skill-item">CTF (Capture The Flag)</dev>
-                    <dev class="skill-item">C/C++</dev>
+                    <div class="skill-item">Git & Github</div>
+                    <div class="skill-item">Unity Development</div>
+                    <div class="skill-item">CTF (Capture The Flag)</div>
+                    <div class="skill-item">C/C++</div>
                 </div>
             </div>
 
@@ -727,29 +585,13 @@ I'm always learning, building, and exploring new things.
                         <div class="link-title">Discord Profile</div>
                         <a href="https://discord.com/users/956606500179169362" class="link-url" target="_blank">@termnh</a>
                     </div>
-                   
                 </div>
             </div>
-
-            <!--<div class="content-card">
-                <h2>Certifications</h2>
-                <div class="certs-list">
-                    <div class="cert-item" onclick="showCertImage('cert1')">
-                        <h3>Cert1</h3>
-                        <p>Comp1</p>
-                    </div>
-                    <div class="cert-item" onclick="showCertImage('cert2')">
-                        <h3>Cert2</h3>
-                        <p>Comp2</p>
-                    </div>
-                </div>
-            </div>-->
         </div>
 
         <!-- Kernels Tab -->
         <div id="kernels" class="tab-content">
             <div class="content-card">
-                <!--<h2>Unofficial Nethunter Kernels</h2>-->
                 <div class="kernel-category">
                     <div class="kernel-name">CyberEdge Kernel</div>
                     <div class="device-list" id="lightning-devices">
@@ -765,10 +607,6 @@ I'm always learning, building, and exploring new things.
                             <span class="device-name-text">Redmi Note 12 5G/Poco X5 5G</span>
                             <a href="https://github.com/termn0xh/cyberedge_kernel_xiaomi_stone/releases" class="download-link" target="_blank">Download</a>
                         </div>
-                        <!--<div class="device-item">
-                            <span class="device-name-text">Google Pixel 5/5a/4a</span>
-                            <a href="https://github.com/yourrepo/lightning-k40" class="download-link" target="_blank">Download</a>
-                        </div>-->
                     </div>
                 </div>
 
@@ -783,71 +621,6 @@ I'm always learning, building, and exploring new things.
                 </div>
             </div>
         </div>
-
-        <!-- ROM Ports Tab 
-        <div id="ports" class="tab-content">
-            <div class="content-card">
-                <div class="device-category">
-                    <div class="device-name">POCO X5 5G</div>
-                    <div class="rom-list">
-                        <div class="rom-item">
-                            <span class="rom-name-text">soon</span>
-                            <a href="Still working on it" class="download-link" target="_blank">Download</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="device-category">
-                    <div class="device-name">BEGONIA</div>
-                    <div class="rom-list">
-                        <div class="rom-item">
-                            <span class="rom-name-text">soon</span>
-                            <a href="Still working on it" class="download-link" target="_blank">Download</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-
-        <!-- Games Tab 
-        <div id="games" class="tab-content">
-            <div class="content-card">
-                <h2>My Games</h2>
-                <div class="games-grid">
-                    <div class="game-item">
-                        <div class="game-title">Space Explorer</div>
-                        <div class="game-description">
-                            An epic space adventure game where you explore galaxies, fight alien enemies, and upgrade your spaceship. Built with Unity Engine featuring stunning 3D graphics and immersive gameplay.
-                        </div>
-                        <a href="https://github.com/yourrepo/space-explorer/releases" class="game-download" target="_blank">Download Game</a>
-                    </div>
-
-                    <div class="game-item">
-                        <div class="game-title">Pixel Runner</div>
-                        <div class="game-description">
-                            A retro-style endless runner game with pixel art graphics. Jump, slide, and dash through challenging obstacles while collecting coins and power-ups. Perfect for casual gaming sessions.
-                        </div>
-                        <a href="https://github.com/yourrepo/pixel-runner/releases" class="game-download" target="_blank">Download Game</a>
-                    </div>
-
-                    <div class="game-item">
-                        <div class="game-title">Kernel Simulator</div>
-                        <div class="game-description">
-                            An educational simulation game that teaches kernel development concepts. Learn about process scheduling, memory management, and system calls through interactive gameplay and coding challenges.
-                        </div>
-                        <a href="https://github.com/yourrepo/kernel-simulator/releases" class="game-download" target="_blank">Download Game</a>
-                    </div>
-
-                    <div class="game-item">
-                        <div class="game-title">ROM Builder Tycoon</div>
-                        <div class="game-description">
-                            Manage your own ROM development studio! Hire developers, research new features, and build custom ROMs for different devices. A unique blend of strategy and Android development simulation.
-                        </div>
-                        <a href="https://github.com/yourrepo/rom-builder-tycoon/releases" class="game-download" target="_blank">Download Game</a>
-                    </div>
-                </div>
-            </div>
-        </div>-->
     </div> 
 
     <!-- Certificate Modal -->
@@ -859,15 +632,15 @@ I'm always learning, building, and exploring new things.
     </div>
 
     <script>
-        // Create floating particles
+        // Create subtle floating particles
         function createParticles() {
-            for (let i = 0; i < 15; i++) {
+            for (let i = 0; i < 8; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
                 document.body.appendChild(particle);
             }
         }
@@ -916,8 +689,8 @@ I'm always learning, building, and exploring new things.
 
         // Certificate modal functionality
         const certImages = {
-            'cert1': 'path/to/android-cert.jpg', // Replace with actual image path
-            'cert2': 'path/to/unity-cert.jpg'   // Replace with actual image path
+            'cert1': 'path/to/android-cert.jpg',
+            'cert2': 'path/to/unity-cert.jpg'
         };
 
         function showCertImage(certId) {
@@ -927,7 +700,6 @@ I'm always learning, building, and exploring new things.
             modalImg.src = certImages[certId];
             modal.style.display = 'block';
             
-            // Animate modal appearance
             setTimeout(() => {
                 modal.querySelector('.modal-content').style.transform = 'translate(-50%, -50%) scale(1)';
                 modal.querySelector('.modal-content').style.opacity = '1';
@@ -954,21 +726,21 @@ I'm always learning, building, and exploring new things.
             }
         }
 
-        // Add mouse trail effect
+        // Subtle mouse trail effect
         document.addEventListener('mousemove', function(e) {
-            if (Math.random() > 0.9) {
+            if (Math.random() > 0.95) {
                 const trail = document.createElement('div');
                 trail.className = 'particle';
                 trail.style.left = e.clientX + 'px';
                 trail.style.top = e.clientY + 'px';
                 trail.style.position = 'fixed';
                 trail.style.pointerEvents = 'none';
-                trail.style.animation = 'float 1s ease-out forwards';
+                trail.style.animation = 'float 2s ease-out forwards';
                 document.body.appendChild(trail);
                 
                 setTimeout(() => {
                     trail.remove();
-                }, 1000);
+                }, 2000);
             }
         });
 
@@ -999,7 +771,7 @@ I'm always learning, building, and exploring new things.
 
         // Add keyboard navigation
         document.addEventListener('keydown', function(e) {
-            const tabs = ['about', 'kernels', 'ports', 'games'];
+            const tabs = ['about', 'kernels'];
             const activeTab = document.querySelector('.nav-tab.active');
             const activeIndex = Array.from(document.querySelectorAll('.nav-tab')).indexOf(activeTab);
             
